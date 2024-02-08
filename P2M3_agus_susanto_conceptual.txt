@@ -1,0 +1,27 @@
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+    Jawaban :
+        NoSQL adalah jenis sistem manajemen database yang menyediakan cara untuk menyimpan dan mengambil data yang tidak dimodelkan dalam bentuk tabel seperti pada basis data relasional. Selain itu NoSQL digunakan untuk menangani volume besar data yang tidak terstruktur atau semi-terstruktur.
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+    Jawaban:
+        NoSQL: Data yang tidak terstruktur atau semi-terstruktur, data yang besar dan tidak terstruktur
+
+        RDBMS : Data saling memiliki struktur hubungan antar satu sama lain, memuliki trasaksibyang kompleks.
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+
+    Jawaban:
+        a. ArangoDB adalah database NoSQL yang unggul karena mendukung multiple data models, termasuk document, graph, dan key-value store dalam satu platform.
+        b. MongoDB memiliki keunggulan dalam fleksibilitas skema, skalabilitas horizontal, dan kemampuan untuk menangani data semi-struktur dan tak terstruktur dengan baik selain itu Performa cepat, Fleksibel dan scalable, Bahasa pemrograman variatif
+
+4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+    Jawaban :
+        Airflow adalah platform yang di gunakan untuk melakukan penjadwalan pengolahan data secara terprogram.
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+    Jawaban :
+        Great Expectations adalah library yang di gunakan untuk melakukan validasi dan pengujian data secara otomatis seperti check tipe data, nilai data apakah sudah sesuai dengan ekspektasi atau standar yang di terapkan.
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+    Jawaban :
+        Batch processing adalah metode pemrosesan data di mana sekelompok transaksi atau data dikumpulkan, diproses, dan disimpan bersama sebagai sekumpulan batch dan di proses sesuai dengan jadwal yang di tentukan. contoh penggunaan misal payroll/penggajian, monthly reporting dan sejenisnya. Tools nya antara lain Apache Spark,  U-SQL dll.

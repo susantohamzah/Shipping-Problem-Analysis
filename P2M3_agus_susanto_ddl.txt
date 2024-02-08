@@ -1,0 +1,76 @@
+URL Dataset : https://www.kaggle.com/datasets/saadatali110/supply-chain-dataset/code
+
+DDL Create table in postgress: 
+    -- Create table with column
+    CREATE TABLE supply_chain(
+        "Type" VARCHAR(22) , 
+        "Days for shipping (real)" INTEGER, 
+        "Days for shipment (scheduled)" INTEGER,
+        "Benefit per order" FLOAT, 
+        "Sales per customer" FLOAT, 
+        "Delivery Status" VARCHAR(50),
+        "Late_delivery_risk" INT, 
+        "Category Id" INTEGER, 
+        "Category Name" VARCHAR(50), 
+        "Customer City" VARCHAR(50),
+        "Customer Country" VARCHAR(50), 
+        "Customer Email" VARCHAR(50), 
+        "Customer Fname" VARCHAR(50), 
+        "Customer Id" VARCHAR(50),
+        "Customer Lname" VARCHAR(50), 
+        "Customer Password"  VARCHAR(50), 
+        "Customer Segment" VARCHAR(50),
+        "Customer State" VARCHAR(50), 
+        "Customer Street" VARCHAR(50), 
+        "Customer Zipcode" INTEGER,
+        "Department Id" INTEGER, 
+        "Department Name" VARCHAR(50), 
+        "Latitude" FLOAT, 
+        "Longitude" FLOAT, 
+        "Market" VARCHAR(50),
+        "Order City" VARCHAR(50), 
+        "Order Country" VARCHAR(50), 
+        "Order Customer Id" INTEGER,
+        "order date (DateOrders)" TIMESTAMP, 
+        "Order Id" INTEGER, 
+        "Order Item Cardprod Id" INTEGER,
+        "Order Item Discount" FLOAT, 
+        "Order Item Discount Rate" FLOAT, 
+        "Order Item Id" INTEGER NOT NULL PRIMARY KEY,
+        "Order Item Product Price" FLOAT, 
+        "Order Item Profit Ratio" FLOAT,
+        "Order Item Quantity" INTEGER, 
+        "Sales" FLOAT, 
+        "Order Item Total" FLOAT,
+        "Order Profit Per Order" FLOAT, 
+        "Order Region"  VARCHAR(50), 
+        "Order State" VARCHAR(50), 
+        "Order Status" VARCHAR(50),
+        "Order Zipcode" VARCHAR(50), 
+        "Product Card Id" INTEGER, 
+        "Product Category Id" INTEGER,
+        "Product Description"  VARCHAR(100), 
+        "Product Image" VARCHAR(100), 
+        "Product Name" VARCHAR(100), 
+        "Product Price" FLOAT,
+        "Product Status" INTEGER, 
+        "shipping date (DateOrders)" TIMESTAMP, 
+        "Shipping Mode" VARCHAR(50)
+    )
+
+DML for insert data to postgresql:
+
+    #Library
+    from sqlalchemy import create_engine
+    import pandas as pd
+    import codecs
+
+    #Read CSV
+    with codecs.open('Supply_Chain_Dataset.csv', 'r', encoding='ISO-8859-1') as f:
+        df = pd.read_csv(f)
+
+    #Create connection to postgresql
+    engine = create_engine('postgresql://airflow:airflow@localhost:6607/airflow')
+
+    #store dataframe to postgresql
+    df.to_sql('supply_chain', engine, if_exists='replace', index=False)
